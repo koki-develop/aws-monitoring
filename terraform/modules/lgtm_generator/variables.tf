@@ -3,5 +3,5 @@ variable "sns_topic_arn" {
 }
 
 locals {
-  prefix = "lgtm-generator-backend"
+  project = "lgtm-generator-backend"
 }
