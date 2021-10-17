@@ -17,7 +17,7 @@ output "widgets" {
           region  = "us-east-1"
           stacked = false
           stat    = "Sum"
-          title   = "リクエスト数"
+          title   = "API リクエスト数"
           view    = "timeSeries"
         }
       },
@@ -39,7 +39,7 @@ output "widgets" {
           region  = "us-east-1"
           stacked = false
           stat    = "Average"
-          title   = "レイテンシー"
+          title   = "API レイテンシー"
           view    = "timeSeries"
         }
       },
@@ -63,7 +63,7 @@ output "widgets" {
           region  = "us-east-1"
           stacked = false
           stat    = "Sum"
-          title   = "4XX エラー"
+          title   = "API 4XX エラー"
           view    = "timeSeries"
         }
       },
@@ -79,7 +79,7 @@ output "widgets" {
           region  = "us-east-1"
           stacked = false
           stat    = "Sum"
-          title   = "5XX エラー"
+          title   = "API 5XX エラー"
           view    = "timeSeries"
         }
       },
