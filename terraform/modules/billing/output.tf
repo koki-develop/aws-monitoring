@@ -23,7 +23,6 @@ output "widgets" {
         }
       },
       {
-        title = "推移"
         type  = "metric"
         width = 3
         properties = {
@@ -47,6 +46,7 @@ output "widgets" {
           ]
           region  = "us-east-1"
           stacked = false
+          title   = "推移"
           view    = "timeSeries"
         }
       }
