@@ -9,5 +9,6 @@ module "qiita_lgtm_ranking" {
 }
 
 module "lgtm_generator" {
-  source = "./modules/lgtm_generator"
+  source        = "./modules/lgtm_generator"
+  sns_topic_arn = aws_sns_topic.default.arn
 }
