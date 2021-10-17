@@ -3,5 +3,5 @@ variable "sns_topic_arn" {
 }
 
 locals {
-  prefix = "qiita-lgtm-ranking"
+  project = "qiita-lgtm-ranking"
 }

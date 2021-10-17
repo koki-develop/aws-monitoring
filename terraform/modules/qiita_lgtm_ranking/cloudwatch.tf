@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_metric_alarm" "daily_errors" {
-  alarm_name          = "${local.prefix}-daily-errors"
+  alarm_name          = "${local.project}-daily-errors"
   actions_enabled     = true
   comparison_operator = "GreaterThanOrEqualToThreshold"
   datapoints_to_alarm = 1
@@ -16,10 +16,15 @@ resource "aws_cloudwatch_metric_alarm" "daily_errors" {
   treat_missing_data = "notBreaching"
   ok_actions         = [var.sns_topic_arn]
   alarm_actions      = [var.sns_topic_arn]
+
+  tags = {
+    Name    = "${local.project}-alarm-daily-errors"
+    Project = local.project
+  }
 }
 
 resource "aws_cloudwatch_metric_alarm" "daily_by_tag_errors" {
-  alarm_name          = "${local.prefix}-daily-by-tag-errors"
+  alarm_name          = "${local.project}-daily-by-tag-errors"
   actions_enabled     = true
   comparison_operator = "GreaterThanOrEqualToThreshold"
   datapoints_to_alarm = 1
@@ -36,10 +41,15 @@ resource "aws_cloudwatch_metric_alarm" "daily_by_tag_errors" {
   treat_missing_data = "notBreaching"
   ok_actions         = [var.sns_topic_arn]
   alarm_actions      = [var.sns_topic_arn]
+
+  tags = {
+    Name    = "${local.project}-alarm-daily-by-tag-errors"
+    Project = local.project
+  }
 }
 
 resource "aws_cloudwatch_metric_alarm" "weekly_errors" {
-  alarm_name          = "${local.prefix}-weekly-errors"
+  alarm_name          = "${local.project}-weekly-errors"
   actions_enabled     = true
   comparison_operator = "GreaterThanOrEqualToThreshold"
   datapoints_to_alarm = 1
@@ -56,10 +66,15 @@ resource "aws_cloudwatch_metric_alarm" "weekly_errors" {
   treat_missing_data = "notBreaching"
   ok_actions         = [var.sns_topic_arn]
   alarm_actions      = [var.sns_topic_arn]
+
+  tags = {
+    Name    = "${local.project}-alarm-weekly-errors"
+    Project = local.project
+  }
 }
 
 resource "aws_cloudwatch_metric_alarm" "weekly_by_tag_errors" {
-  alarm_name          = "${local.prefix}-weekly-by-tag-errors"
+  alarm_name          = "${local.project}-weekly-by-tag-errors"
   actions_enabled     = true
   comparison_operator = "GreaterThanOrEqualToThreshold"
   datapoints_to_alarm = 1
@@ -76,4 +91,9 @@ resource "aws_cloudwatch_metric_alarm" "weekly_by_tag_errors" {
   treat_missing_data = "notBreaching"
   ok_actions         = [var.sns_topic_arn]
   alarm_actions      = [var.sns_topic_arn]
+
+  tags = {
+    Name    = "${local.project}-alarm-weekly-by-tag-errors"
+    Project = local.project
+  }
 }
