@@ -12,7 +12,7 @@ output "widgets" {
               "Currency",
               "USD",
               {
-                period = 21600
+                period = 86400
                 stat   = "Maximum"
               },
             ],
