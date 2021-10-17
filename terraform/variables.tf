@@ -1,3 +1,3 @@
 locals {
-  prefix = "monitoring"
+  project = "monitoring"
 }

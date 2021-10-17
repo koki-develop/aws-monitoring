@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_dashboard" "default" {
-  dashboard_name = local.prefix
+  dashboard_name = local.project
   dashboard_body = jsonencode(
     {
       widgets = flatten([

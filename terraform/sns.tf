@@ -1,5 +1,9 @@
 resource "aws_sns_topic" "default" {
-  name = local.prefix
+  name = local.project
+  tags = {
+    Name    = "${local.project}-sns-topic-default"
+    Project = local.project
+  }
 }
 
 resource "aws_sns_topic_subscription" "email" {
