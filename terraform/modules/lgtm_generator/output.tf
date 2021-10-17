@@ -70,17 +70,11 @@ output "widgets" {
       {
         type = "metric"
         properties = {
-          metrics = [
-            [
-              "AWS/ApiGateway",
-              "5XXError",
-              "ApiName",
-              data.aws_api_gateway_rest_api.default.name,
-              {
-                color = "#d62728"
-              },
-            ],
-          ]
+          annotations = {
+            alarms = [
+              aws_cloudwatch_metric_alarm.error_5xx.arn
+            ]
+          }
           period  = 300
           region  = "us-east-1"
           stacked = false
