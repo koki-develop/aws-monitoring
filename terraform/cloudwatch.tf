@@ -20,6 +20,11 @@ resource "aws_cloudwatch_dashboard" "default" {
           ], [
           for j, item in widget.items :
           merge(item, {
+            properties = merge(item["properties"], {
+              legend = {
+                position = "hidden"
+              }
+            })
             width  = 6 * (contains(keys(item), "width") ? item["width"] : 1)
             height = 6,
           })

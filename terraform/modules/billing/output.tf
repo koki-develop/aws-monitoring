@@ -27,6 +27,12 @@ output "widgets" {
         type  = "metric"
         width = 3
         properties = {
+          yAxis = {
+            left = {
+              label     = "USD"
+              showUnits = false
+            }
+          }
           metrics = [
             [
               "AWS/Billing",
