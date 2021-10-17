@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_metric_alarm" "default" {
-  alarm_name      = "${var.prefix}-${var.severity}"
+  alarm_name      = "${var.project}-${var.severity}"
   actions_enabled = true
 
   alarm_actions       = [var.sns_topic_arn]
@@ -13,4 +13,9 @@ resource "aws_cloudwatch_metric_alarm" "default" {
   statistic           = "Maximum"
   threshold           = var.threshold
   treat_missing_data  = "notBreaching"
+
+  tags = {
+    Name    = "${var.project}-alarm-${var.severity}"
+    Project = var.project
+  }
 }

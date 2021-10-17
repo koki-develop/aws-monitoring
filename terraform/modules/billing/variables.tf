@@ -3,5 +3,5 @@ variable "sns_topic_arn" {
 }
 
 locals {
-  prefix = "billing"
+  project = "billing"
 }
